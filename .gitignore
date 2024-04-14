@@ -1,0 +1,8 @@
+.cache/
+.local/
+.dotnet/
+.vscode-server/
+mysql/db/
+poetry.lock
+.python_history
+.gitconfig
