@@ -1,10 +1,10 @@
 version: "3.9"
 services:
   
-  django:
+  django-ads:
     build: 
      context: .
-     dockerfile: Dockerfile_django
+     dockerfile: Dockerfile_django-ads
 
     volumes:
       - ../:/home/work
@@ -16,16 +16,18 @@ services:
 
     restart: always
     working_dir: /home/work
-    container_name: django
+    container_name: django-ads
 
     command: sleep 40000000
+    ports:
+      - 7000:8000
 
-  django-db:
+  django-ads-db:
     image: mysql:8.0.1
-    container_name: django-db
+    container_name: django-ads-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: django-db
+      MYSQL_DATABASE: django-ads-db
       MYSQL_USER: hashimoto
       MYSQL_PASSWORD: hashimoto
       TZ: 'Asia/Tokyo'
